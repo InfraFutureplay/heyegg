@@ -13,13 +13,14 @@ services:
       - "3333:3333"
       - "8080:8080"
     environment:
-      - BOT_NAME=heyburrito
+      - BOT_NAME=heyegg
       - DATABASE_DRIVER=mongodb
-      - MONGODB_URL=mongodb://mongodb:27017
-      - MONGODB_DATABASE=heyburrito
-      - SLACK_API_TOKEN=SeeDocumentation
-      - "SLACK_EMOJI_INC=:burrito:"
+      - MONGODB_URL=mongodb+srv://tom:future2023@fdi-cluster.y9juexk.mongodb.net
+      - MONGODB_DATABASE=hey-egg
+      - SLACK_API_TOKEN=xoxb-2513029522-5222937352609-qt1weLnBz3VjzImIhWERvvrO
+      - "SLACK_EMOJI_INC=:goldenegg:"
       - "SLACK_EMOJI_DEC=:rottenburrito:"
       - SLACK_DAILY_CAP=5
+      - ENABLE_DECREMENT=false
     links:
       - mongodb
