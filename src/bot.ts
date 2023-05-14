@@ -1,10 +1,10 @@
 import config from './config';
-import BurritoStore from './store/BurritoStore';
-import LocalStore from './store/LocalStore';
 import { parseMessage } from './lib/parseMessage';
 import { validBotMention, validMessage } from './lib/validator';
 import Rtm from './slack/Rtm';
 import Wbc from './slack/Wbc';
+import BurritoStore from './store/BurritoStore';
+import LocalStore from './store/LocalStore';
 
 const {
     enableDecrement,
@@ -53,7 +53,7 @@ const handleBurritos = async (giver: string, updates: Updates[]) => {
         const burritos = await BurritoStore.givenBurritosToday(giver, 'from');
         const diff = dailyCap - burritos;
         if (updates.length > diff) {
-            notifyUser(giver, `You are trying to give away ${updates.length} burritos, but you only have ${diff} burritos left today!`);
+            notifyUser(giver, `You are trying to give away ${updates.length} Golden Eggs, but you only have ${diff} Golden Eggs left today!`);
             return false;
         }
         if (burritos >= dailyCap) {
@@ -69,7 +69,7 @@ const handleBurritos = async (giver: string, updates: Updates[]) => {
         const diffDec = dailyDecCap - givenRottenBurritos;
         if (incUpdates.length) {
             if (incUpdates.length > diffInc) {
-                notifyUser(giver, `You are trying to give away ${updates.length} burritos, but you only have ${diffInc} burritos left today!`);
+                notifyUser(giver, `You are trying to give away ${updates.length} Golden Eggs, but you only have ${diffInc} Golden Eggs left today!`);
             } else {
                 await giveBurritos(giver, incUpdates);
             }
@@ -103,8 +103,4 @@ const start = () => {
     });
 };
 
-export {
-    handleBurritos,
-    notifyUser,
-    start,
-};
+export { handleBurritos, notifyUser, start };
