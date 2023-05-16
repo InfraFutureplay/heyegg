@@ -1,7 +1,7 @@
 {
     "version": 2,
     "buildCommand": "npm run start",
-    "framework": "other",
+    "framework": "Parcel",
     "builds": [
         {
             "src": "src/server.ts",
@@ -11,7 +11,7 @@
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "/src/api/$1",
+            "dest": "/src/sever.ts",
             "methods": [
                 "GET",
                 "POST",
