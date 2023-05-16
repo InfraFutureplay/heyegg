@@ -1,16 +1,15 @@
 {
     "version": 2,
-    "buildCommand": "npm run start",
     "builds": [
         {
-            "src": "src/server.js",
+            "src": "src/server.ts",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "/api",
+            "dest": "src/server.ts",
             "methods": [
                 "GET",
                 "POST",
