@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "buildCommand": "npm run start",
     "builds": [
         {
             "src": "src/server.ts",
@@ -8,7 +9,7 @@
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
+            "src": "/(.*)",
             "dest": "src/server.ts",
             "methods": [
                 "GET",
