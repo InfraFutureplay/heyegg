@@ -1,7 +1,6 @@
 {
     "version": 2,
     "buildCommand": "npm run start",
-    "framework": "parcel",
     "builds": [
         {
             "src": "src/server.ts",
